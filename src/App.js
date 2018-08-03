@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import SizeSelect from './components/SizeSelect';
+import Products from './components/Products';
 
 class App extends Component {
   constructor(props) {
@@ -27,12 +28,14 @@ class App extends Component {
     const { selectedSizes } = this.state;
 
     return (
-      <div className="row">
-        <div className="col-12 col-md-4 col-lg-3">
-          <SizeSelect onSelect={this.handleSizeSelect} selected={selectedSizes} />
-        </div>
-        <div className="col-12 col-md-8 col-lg-9">
-          TODO
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-md-4 col-lg-3">
+            <SizeSelect onSelect={this.handleSizeSelect} selected={selectedSizes} />
+          </div>
+          <div className="col-12 col-md-8 col-lg-9">
+            <Products selectedSizes={selectedSizes} />
+          </div>
         </div>
       </div>
     );

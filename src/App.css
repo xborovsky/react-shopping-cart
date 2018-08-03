@@ -3,7 +3,7 @@
   height: 2.2rem;
   border-radius: 50%;
   font-size: 8pt;
-  color: #333;
+  color: #111;
   line-height: 2.2rem;
   text-align: center;
   background: #ddd;
@@ -13,5 +13,43 @@
 
 .size-item.selected {
   color: #fff;
-  background: #333;
+  background: #111;
+}
+
+.btn-custom {
+  background-color: #111;
+  color: #fff;
+}
+
+.product-item {
+  margin-bottom: 50px;
+}
+
+.product-item img {
+  display: block;
+  margin: 0 auto;
+}
+
+.product-item-title {
+  font-weight: bold;
+  font-size: 11pt;
+  display: block;
+  text-align: center;
+}
+
+.product-item-price {
+  font-weight: bold;
+  font-size: 20pt;
+  display: block;
+  text-align: center;
+}
+
+.product-item-price .decimal-part {
+  font-size: 12pt;
+}
+
+.product-item-price-currency {
+  font-size: 11pt;
+  vertical-align: middle;
+  margin-right: 3px;
 }
