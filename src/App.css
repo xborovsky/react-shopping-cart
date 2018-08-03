@@ -1,3 +1,7 @@
+.size-items {
+  justify-content: center;
+}
+
 .size-item {
   width: 2.2rem;
   height: 2.2rem;
@@ -7,7 +11,7 @@
   line-height: 2.2rem;
   text-align: center;
   background: #ddd;
-  margin: 1rem 0.2rem;
+  margin: 0.5rem 0.2rem 1rem;
   cursor: pointer;
 }
 
@@ -19,6 +23,10 @@
 .btn-custom {
   background-color: #111;
   color: #fff;
+}
+
+.product-items {
+  margin-top: 20px;
 }
 
 .product-items > [class*='col-'] {

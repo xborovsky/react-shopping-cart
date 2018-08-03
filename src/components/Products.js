@@ -3,12 +3,15 @@ import PropTypes from 'prop-types';
 import { fetchProducts } from '../api/api';
 import Product from './Product';
 import ProductsCounter from './ProductsCounter';
+import Order from './Order';
+import * as constants from '../utils/constants';
 
 class Products extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            filteredProducts : []
+            filteredProducts : [],
+            orderBy : constants.ORDER_PRICE_ASC
         };
     }
 
@@ -23,16 +26,24 @@ class Products extends Component {
     }
 
     doFetchProducts(sizes) {
-        fetchProducts(sizes)
+        fetchProducts(sizes, this.state.orderBy)
             .then(products => this.setState({filteredProducts : products}));
     }
 
+    handleOrderByChanged = (e) => {
+        const newOrderBy = e.target.value;
+        this.setState({orderBy : newOrderBy}, () => this.doFetchProducts(this.props.selectedSizes));
+    }
+
     render() {
-        const { filteredProducts } = this.state;
+        const { filteredProducts, orderBy } = this.state;
 
         return (
             <div className="container">
-                <ProductsCounter cnt={filteredProducts.length} />
+                <div className="row">
+                    <ProductsCounter cnt={filteredProducts.length} />
+                    <Order orderBy={orderBy} onChange={this.handleOrderByChanged} />
+                </div>
                 <div className="row display-flex product-items">
                     { filteredProducts.map(product => (
                         <div className="col-12, col-md-4 col-md-3" key={product.id}>

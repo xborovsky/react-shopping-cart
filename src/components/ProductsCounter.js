@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ProductsCounter = ({cnt}) =>
-    <div className="row">
+    <div className="col-12 col-md-9">
         {cnt} product{cnt === 0 || cnt > 1 ? '(s)' : ''} found
     </div>
 ;
