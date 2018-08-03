@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { fetchProducts } from '../api/api';
 import Product from './Product';
+import ProductsCounter from './ProductsCounter';
 
 class Products extends Component {
     constructor(props) {
@@ -30,12 +31,15 @@ class Products extends Component {
         const { filteredProducts } = this.state;
 
         return (
-            <div className="row row-eq-height">
-                { filteredProducts.map(product => (
-                    <div className="col-12, col-md-4 col-md-3" key={product.id}>
-                        <Product product={product} />
-                    </div>
-                ))}
+            <div className="container">
+                <ProductsCounter cnt={filteredProducts.length} />
+                <div className="row display-flex product-items">
+                    { filteredProducts.map(product => (
+                        <div className="col-12, col-md-4 col-md-3" key={product.id}>
+                            <Product product={product} />
+                        </div>
+                    ))}
+                </div>
             </div>
         );
     }

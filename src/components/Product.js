@@ -17,12 +17,14 @@ const getFormattedPrice = (price) => {
 const Product = ({product}) =>
     <div className="product-item">
         <img className="img-fluid" alt={product.title} src={`/img/${product.sku}.jpg`} />
-        <span className="product-item-title">{product.title}</span>
-        <span className="product-item-price">
-            <span className="product-item-price-currency">{product.currencyFormat}</span>
-            <span>{getFormattedPrice(product.price)}</span>
-        </span>
-        <Button classNames="btn btn-block btn-custom" title="Add to cart" />
+        <div className="product-item-info">
+            <span className="product-item-title">{product.title}</span>
+            <span className="product-item-price">
+                <span className="product-item-price-currency">{product.currencyFormat}</span>
+                <span>{getFormattedPrice(product.price)}</span>
+            </span>
+            <Button classNames="btn btn-block btn-custom" title="Add to cart" />
+        </div>
     </div>
 ;
 

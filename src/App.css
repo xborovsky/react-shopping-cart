@@ -21,13 +21,20 @@
   color: #fff;
 }
 
-.product-item {
+.product-items > [class*='col-'] {
   margin-bottom: 50px;
+}
+
+.product-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .product-item img {
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 10px;
 }
 
 .product-item-title {
@@ -52,4 +59,13 @@
   font-size: 11pt;
   vertical-align: middle;
   margin-right: 3px;
+}
+
+.row.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row.display-flex > [class*='col-'] {
+  flex-grow: 1;
 }
