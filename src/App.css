@@ -1,28 +1,17 @@
-.App {
+.size-item {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  font-size: 8pt;
+  color: #333;
+  line-height: 2.2rem;
   text-align: center;
+  background: #ddd;
+  margin: 1rem 0.2rem;
+  cursor: pointer;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.size-item.selected {
+  color: #fff;
+  background: #333;
 }
