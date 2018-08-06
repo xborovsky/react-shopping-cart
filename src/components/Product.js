@@ -3,18 +3,7 @@ import PropTypes from 'prop-types';
 import Button from './common/Button';
 import { connect } from "react-redux";
 import { addProductToCart } from '../redux/actions';
-
-const getFormattedPrice = (price) => {
-    const priceStr = price.toFixed(2).toString();
-    return (
-        <span>
-            {priceStr.substring(0, priceStr.indexOf('.'))}
-            <span className="decimal-part">
-                {priceStr.substring(priceStr.indexOf('.'))}
-            </span>
-        </span>
-    );
-};
+import { formatPrice } from '../utils/price-format';
 
 const Product = ({product, onItemAddedToCart}) =>
     <div className="product-item">
@@ -23,7 +12,7 @@ const Product = ({product, onItemAddedToCart}) =>
             <span className="product-item-title">{product.title}</span>
             <span className="product-item-price">
                 <span className="product-item-price-currency">{product.currencyFormat}</span>
-                <span>{getFormattedPrice(product.price)}</span>
+                <span>{formatPrice(product.price)}</span>
             </span>
             <Button classNames="btn btn-block btn-custom" title="Add to cart" onClick={() => onItemAddedToCart(product)} />
         </div>

@@ -1,6 +1,6 @@
 import * as constants from '../utils/constants';
 
-export const fetchProducts = (sizes, orderBy) => {
+export const fetchProducts = (sizes, orderBy = constants.ORDER_PRICE_ASC) => {
     return fetch('products.json')
         .then(handleError)
         .then(response => response.json())

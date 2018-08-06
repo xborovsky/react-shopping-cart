@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ALL_SIZES } from '../utils/constants';
 
-const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+const sizes = ALL_SIZES;
 
 const SizeSelect = ({selected, onSelect}) =>
     <div className="row">

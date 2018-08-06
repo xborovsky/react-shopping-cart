@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import SizeSelect from './components/SizeSelect';
 import Products from './components/Products';
-import ShoppingCart from './components/ShoppingCart';
+import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 
 class App extends Component {
   constructor(props) {
