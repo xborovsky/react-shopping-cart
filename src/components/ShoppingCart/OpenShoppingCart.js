@@ -13,8 +13,8 @@ const getTotalPrice = (items) => {
     return total;
 };
 
-const OpenShoppingCart = ({items, onOpenChange}) =>
-    <div className="shopping-cart-open">
+const OpenShoppingCart = ({items, onOpenChange, isOpen}) =>
+    <div className={`shopping-cart-open ${isOpen ? 'visible' : ''}`}>
         <i className="fas fa-times shopping-cart-close-icon" onClick={onOpenChange} title="Close shopping cart"></i>
         <h3 className="text-center">Shopping cart</h3>
         <div className="shopping-cart-items">
@@ -46,7 +46,8 @@ const OpenShoppingCart = ({items, onOpenChange}) =>
 
 OpenShoppingCart.propTypes = {
     items : PropTypes.array.isRequired,
-    onOpenChange : PropTypes.func.isRequired
+    onOpenChange : PropTypes.func.isRequired,
+    isOpen : PropTypes.bool
 };
 
 export default OpenShoppingCart;

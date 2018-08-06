@@ -4,6 +4,7 @@ import './ShoppingCart.css';
 import { connect } from 'react-redux';
 import ClosedShoppingCart from './ClosedShoppingCart';
 import OpenShoppingCart from './OpenShoppingCart';
+import Wrapper from '../common/Wrapper';
 
 class ShoppingCart extends Component {
 
@@ -23,9 +24,10 @@ class ShoppingCart extends Component {
         const { isOpen } = this.state;
 
         return (
-            isOpen ?
-                <OpenShoppingCart onOpenChange={this.handleOpenChange} items={shoppingCart} /> :
-                <ClosedShoppingCart numItems={shoppingCart ? shoppingCart.length : 0} onOpenChange={this.handleOpenChange} />
+            <Wrapper>
+                <OpenShoppingCart onOpenChange={this.handleOpenChange} items={shoppingCart} isOpen={isOpen} />
+                <ClosedShoppingCart numItems={shoppingCart ? shoppingCart.length : 0} onOpenChange={this.handleOpenChange} isOpen={isOpen} />
+            </Wrapper>
         );
     }
 

@@ -7,6 +7,17 @@
     padding: 10px 20px;
     font-size: 20pt;
     cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.shopping-cart.visible {
+    width: auto;
 }
 
 .shopping-cart .badge {
@@ -21,7 +32,7 @@
 .shopping-cart-open {
     position: fixed;
     top: 0;
-    right: 0;
+    right: -25%;
     height: 100%;
     width: 25%;
     background-color: #111;
@@ -30,17 +41,33 @@
     overflow-y: scroll;
     overflow-x: hidden;
     z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.shopping-cart-open.visible {
+    right: 0;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
 }
 
 @media (max-width: 576px) {
     .shopping-cart-open {
         width: 100%;
+        right: -100%;
     }
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
     .shopping-cart-open {
         width: 60%;
+        right: -60%;
     }
 }
 
@@ -85,4 +112,9 @@
 
 .shopping-cart-summary {
     padding-bottom: 15px;
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
 }
