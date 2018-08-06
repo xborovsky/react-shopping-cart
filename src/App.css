@@ -25,6 +25,11 @@
   color: #fff;
 }
 
+.btn-custom:hover {
+  background-color: yellow;
+  color: black;
+}
+
 .product-items {
   margin-top: 20px;
 }
